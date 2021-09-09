@@ -1,0 +1,291 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.book\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.Book\">\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision a4ea6e0445f0b6a80226e82584b5797d346088fb)
++++ b/app/src/main/AndroidManifest.xml	(date 1631226253705)
+@@ -9,7 +9,7 @@
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/Theme.Book">
+-        <activity
++                <activity
+             android:name=".MainActivity"
+             android:exported="true">
+             <intent-filter>
+@@ -18,6 +18,16 @@
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
++        <activity
++            android:name=".lesson1"
++            android:label="SecondActivity"
++            android:exported="true" >
++            <intent-filter>
++                <action android:name=".lesson1" />
++
++                <category android:name="android.intent.category.DEFAULT" />
++            </intent-filter>
++        </activity>
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"19dp\"\r\n        android:layout_marginStart=\"177dp\"\r\n        android:layout_marginTop=\"56dp\"\r\n        android:layout_marginEnd=\"176dp\"\r\n        android:layout_marginBottom=\"656dp\"\r\n        android:text=\"TextView\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView2\"\r\n        android:layout_width=\"58dp\"\r\n        android:layout_height=\"19dp\"\r\n        android:text=\"TextView\"\r\n        tools:layout_editor_absoluteX=\"29dp\"\r\n        tools:layout_editor_absoluteY=\"120dp\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView3\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"TextView\"\r\n        tools:layout_editor_absoluteX=\"26dp\"\r\n        tools:layout_editor_absoluteY=\"163dp\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView4\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"TextView\"\r\n        tools:layout_editor_absoluteX=\"26dp\"\r\n        tools:layout_editor_absoluteY=\"209dp\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision a4ea6e0445f0b6a80226e82584b5797d346088fb)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1631556974856)
+@@ -9,39 +9,47 @@
+     <TextView
+         android:id="@+id/textView"
+         android:layout_width="wrap_content"
+-        android:layout_height="19dp"
+-        android:layout_marginStart="177dp"
+-        android:layout_marginTop="56dp"
+-        android:layout_marginEnd="176dp"
+-        android:layout_marginBottom="656dp"
+-        android:text="TextView"
+-        app:layout_constraintBottom_toBottomOf="parent"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="15dp"
++        android:layout_marginBottom="10dp"
++        android:text="@string/app_name"
++        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
+ 
+-    <TextView
+-        android:id="@+id/textView2"
+-        android:layout_width="58dp"
+-        android:layout_height="19dp"
+-        android:text="TextView"
+-        tools:layout_editor_absoluteX="29dp"
+-        tools:layout_editor_absoluteY="120dp" />
++    <LinearLayout
++        android:id="@+id/linearLayout"
++        android:layout_width="414dp"
++        android:layout_height="642dp"
++        android:layout_marginTop="50dp"
++        android:orientation="vertical"
++        app:layout_constraintTop_toBottomOf="@+id/textView"
++        tools:layout_editor_absoluteX="-2dp">
++
++        <TextView
++            android:id="@+id/textView2"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginStart="10dp"
++            android:layout_marginTop="15dp"
++            android:text="@string/lesson1" />
+ 
+-    <TextView
+-        android:id="@+id/textView3"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="TextView"
+-        tools:layout_editor_absoluteX="26dp"
+-        tools:layout_editor_absoluteY="163dp" />
++        <TextView
++            android:id="@+id/textView3"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginStart="10dp"
++            android:layout_marginTop="15dp"
++            android:text="@string/lesson2" />
+ 
+-    <TextView
+-        android:id="@+id/textView4"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="TextView"
+-        tools:layout_editor_absoluteX="26dp"
+-        tools:layout_editor_absoluteY="209dp" />
++        <TextView
++            android:id="@+id/textView4"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginStart="10dp"
++            android:layout_marginTop="15dp"
++            android:text="@string/lesson3" />
++    </LinearLayout>
+ 
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/book/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.book;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.os.Bundle;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/book/MainActivity.java b/app/src/main/java/com/example/book/MainActivity.java
+--- a/app/src/main/java/com/example/book/MainActivity.java	(revision a4ea6e0445f0b6a80226e82584b5797d346088fb)
++++ b/app/src/main/java/com/example/book/MainActivity.java	(date 1631552925464)
+@@ -2,7 +2,10 @@
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+ 
++import android.content.Intent;
+ import android.os.Bundle;
++import android.view.View;
++import android.widget.TextView;
+ 
+ public class MainActivity extends AppCompatActivity {
+ 
+@@ -10,5 +13,21 @@
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
++        addListenerOnButton();
+     }
+-}
+\ No newline at end of file
++
++
++    public void addListenerOnButton() {
++        TextView lesson1 = (TextView) findViewById(R.id.textView2);
++        lesson1.setOnClickListener(
++                new View.OnClickListener() {
++                    @Override
++                    public void onClick(View v) {
++                        Intent intent = new Intent(".lesson1");
++                        startActivity(intent);
++                    }
++                }
++        );
++
++    }
++}
+Index: .idea/deploymentTargetDropDown.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+new file mode 100644
+--- /dev/null	(date 1631225613094)
++++ b/.idea/deploymentTargetDropDown.xml	(date 1631225613094)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="deploymentTargetDropDown">
++    <targetSelectedWithDropDown>
++      <Target>
++        <type value="QUICK_BOOT_TARGET" />
++        <deviceKey>
++          <Key>
++            <type value="VIRTUAL_DEVICE_PATH" />
++            <value value="C:\Users\oleksandr.rozhkov\.android\avd\Nexus_6_API_26.avd" />
++          </Key>
++        </deviceKey>
++      </Target>
++    </targetSelectedWithDropDown>
++    <timeTargetWasSelectedWithDropDown value="2021-09-09T22:08:39.673243800Z" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">Book</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision a4ea6e0445f0b6a80226e82584b5797d346088fb)
++++ b/app/src/main/res/values/strings.xml	(date 1631219454503)
+@@ -1,3 +1,6 @@
+ <resources>
+     <string name="app_name">Book</string>
++    <string name="lesson1">LS1</string>
++    <string name="lesson2">LS2</string>
++    <string name="lesson3">LS3</string>
+ </resources>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/oleksandr.rozhkov/AndroidStudioProjects/Book/app/src/main/res/layout/activity_main.xml\" value=\"0.20199275362318841\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision a4ea6e0445f0b6a80226e82584b5797d346088fb)
++++ b/.idea/misc.xml	(date 1631554584443)
+@@ -3,7 +3,8 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
+-        <entry key="..\:/Users/oleksandr.rozhkov/AndroidStudioProjects/Book/app/src/main/res/layout/activity_main.xml" value="0.20199275362318841" />
++        <entry key="..\:/Users/oleksandr.rozhkov/AndroidStudioProjects/Book/app/src/main/res/layout/activity_lesson1.xml" value="0.1265625" />
++        <entry key="..\:/Users/oleksandr.rozhkov/AndroidStudioProjects/Book/app/src/main/res/layout/activity_main.xml" value="0.1" />
+       </map>
+     </option>
+   </component>
+Index: app/src/main/java/com/example/book/lesson1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/book/lesson1.java b/app/src/main/java/com/example/book/lesson1.java
+new file mode 100644
+--- /dev/null	(date 1631219284553)
++++ b/app/src/main/java/com/example/book/lesson1.java	(date 1631219284553)
+@@ -0,0 +1,14 @@
++package com.example.book;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++public class lesson1 extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_lesson1);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_lesson1.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_lesson1.xml b/app/src/main/res/layout/activity_lesson1.xml
+new file mode 100644
+--- /dev/null	(date 1631224794285)
++++ b/app/src/main/res/layout/activity_lesson1.xml	(date 1631224794285)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".lesson1">
++
++    <TextView
++        android:id="@+id/textView5"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="169dp"
++        android:layout_marginTop="177dp"
++        android:layout_marginBottom="535dp"
++        android:text="@string/app_name"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file

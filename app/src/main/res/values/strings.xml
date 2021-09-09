@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Book</string>
+    <string name="lesson1">LS1</string>
+    <string name="lesson2">LS2</string>
+    <string name="lesson3">LS3</string>
 </resources>
