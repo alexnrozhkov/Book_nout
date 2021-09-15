@@ -18,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void addListenerOnButton() {
-        TextView lesson1 = (TextView) findViewById(R.id.textView2);
+        TextView lesson1 = (TextView) findViewById(R.id.textView1);
+        TextView lesson2 = (TextView) findViewById(R.id.textView2);
+        TextView lesson3 = (TextView) findViewById(R.id.textView3);
         lesson1.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -28,6 +30,25 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+        lesson2.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(".lesson2");
+                        startActivity(intent);
+                    }
+                }
+        );
+        lesson3.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(".lesson3");
+                        startActivity(intent);
+                    }
+                }
+        );
+
 
     }
 }

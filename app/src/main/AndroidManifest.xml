@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.book">
 
     <application
@@ -9,7 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Book">
-                <activity
+        <activity
+            android:name=".lesson2"
+            android:exported="true"
+            android:label="SecondActivity"
+            tools:ignore="DuplicateActivity">
+            <intent-filter>
+                <action android:name=".lesson2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -20,8 +32,8 @@
         </activity>
         <activity
             android:name=".lesson1"
-            android:label="SecondActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:label="SecondActivity">
             <intent-filter>
                 <action android:name=".lesson1" />
 
